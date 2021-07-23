@@ -10,13 +10,17 @@ def integrator():
     processedUserInput = checker(userInput)
 
     if processedUserInput == '1':
-        oneVariable()
+        returnStmnt = oneVariable() + '+ Constant'
+        return returnStmnt
 
-    if processedUserInput == '2':
+    elif processedUserInput == '2':
         pass
 
-    if processedUserInput == '3':
+    elif processedUserInput == '3':
         pass
+
+    else:
+        print('invalid statement try again')
 
 def checker(inputStr):
 
@@ -35,5 +39,4 @@ def checker(inputStr):
     if inputStr in checkListThree:
         return '3'
 
-    else:
-        return "INPUT IS INVALID"
+
