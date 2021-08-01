@@ -21,7 +21,7 @@ simpleTrigPlusHyperbolicDict = {'sin':'-cos','cos':'sin',
 doesWantToIntegrateBetweenPoints = False
 
 
-# Maybe in divide, make a sepaerate list that contans messages of integrate each variable, wether it be
+# Maybe in divide, make a seperate list that contains messages of integrate each variable, wether it be
 # exponential, basic, by parts, etc...
 
 

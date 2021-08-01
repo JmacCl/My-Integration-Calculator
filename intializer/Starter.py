@@ -3,7 +3,7 @@ from integrator import Integrator
 if __name__ == '__main__':
     restarter = True
     while restarter:
-        Integrator.integrator()
+        print(Integrator.integrator())
         ender = input('try again')
         if ender != 'yes':
             restarter = False
