@@ -1,10 +1,11 @@
 from integrator import Integrator
 
+
 if __name__ == '__main__':
     restarter = True
     while restarter:
         print(Integrator.integrator())
-        ender = input('try again')
+        ender = input('try again? ')
         if ender != 'yes':
             restarter = False
 
