@@ -1,58 +1,31 @@
-# One variable:
-from integrator.Integrator_One_variable import oneVariable
+from integrator import Expression, Artifact
+
+class Integrator:
+
+    def __init__(self, old_expression: Artifact):
+        self.raw_expression = old_expression
+        self.result_expression = self.allocate_integration(self.raw_expression)
 
 
-def integrator() -> str:
-    """
-    This function takes in an expression to be integrated, and returns the integrated expression.
+    def allocate_integration(self, art):
+        return self.integrate(art)
 
-    :return:
-    String: the integrated expression
-    """
-
-    # Take in user input of how many variables they would like to integrate
-    userInput = input("How many variables?: ")
-    processedUserInput = checker(userInput)
-
-    # If user would like to use just one variable
-    if processedUserInput == '1':
-        returnStmt = oneVariable() + '+ Constant'
-        return returnStmt
-
-    # If user would like to use two...
-    elif processedUserInput == '2':
+    def integrate_by_sub(self):
         pass
 
-    # If user would like to use three...
-    elif processedUserInput == '3':
+    def integrate_by_parts(self):
         pass
 
-    # If all else fails, break out and print the following statement
-    else:
-        print('invalid statement try again')
-        return "ERROR"
+    def integrate_trig(self):
+        pass
+
+    def integrate(self, art: Artifact):
+
+        new_power = art.power + 1
+        new_coefficient = art.coefficient/new_power
+
+        return Artifact(new_power, new_coefficient)
 
 
-def checker(inputStr: str) -> str:
-    """
-    This function checks that a given input is valid, and will
-    :param inputStr: The string that is needing to be tested
-    :return: The processed version of the input string
-    """
 
-    # If input is one
-    checkListOne = [1, "one", "One", "ONE", "1"]
-    if inputStr in checkListOne:
-        return '1'
 
-    # If input is two
-    checkListTwo = [2, "two", "Two", "TWO", "2"]
-    if inputStr in checkListTwo:
-        return '2'
-
-    # If input is three
-    checkListThree = [3, "three", "Three", "THREE", "3"]
-    if inputStr in checkListThree:
-        return '3'
-
-    return "ERROR"

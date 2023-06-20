@@ -13,18 +13,6 @@ class Artifacts:
     def simplify_artifact(self):
         pass
 
-    def allocate_integration(self):
-        pass
-
-    def allocate_differentiation(self):
-        pass
-
-    def trig_differentiation(self):
-        pass
-
-    def exponential_differentiation(self):
-        pass
-
     def __validify_inputs(self, coefficient, variable, power):
         pass
 

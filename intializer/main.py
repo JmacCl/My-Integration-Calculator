@@ -1,13 +1,28 @@
-from integrator import Integrator
+from integrator.Expression import Expression
+import argparse
+import os
+
+def process_file_input(file_location):
+    pass
+
+def main(expression_input, command, file_location = None):
+    if file_location:
+        process_file_input(expression_input)
+
+    # Generate Expression
+    exp = Expression(expression_input, command)
+
+
 
 
 if __name__ == '__main__':
-    restarter = True
-    while restarter:
-        print(Integrator.integrator())
-        ender = input('try again? ')
-        if ender != 'yes':
-            restarter = False
+    parser = argparse.ArgumentParser(description='Integrate/Differentiate a given expression')
+    parser.add_argument('expression_input', type=str, help='Input of the integral expression one wants to input')
+    parser.add_argument('command', type=str, help='Specify differentiation or integration')
+    parser.add_argument('--file_location', type=str, help='If wanting to use a file location to integrate the expression')
+    args = parser.parse_args()
+    main()
+
 
 
 '''

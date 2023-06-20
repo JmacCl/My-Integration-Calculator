@@ -12,15 +12,16 @@ import Artifact
 
 class Expression:
 
-    def __int__(self, input: str, expression, artifacts, command: str):
-        self.expression = self.generate_expression(self, input=input)
+    def __int__(self, input_exp: str, command: str):
+        expression = self.generate_expression(self, input_exp=input_exp)
+        self.expression = expression
         if command == 'differentiate':
-            self.differentiate(self, expression)
+            self.differentiate(self, self.expression)
         elif command == ' integrate':
-            self.integrate(self, expression)
+            self.integrate(self, self.expression)
 
-    def generate_expression(self, input: str):
-        print(input)
+    def generate_expression(self, input_exp: str):
+        return ''
 
     def simplify(self):
         """
@@ -33,6 +34,6 @@ class Expression:
         pass
 
     def integrate(self, expression):
-        pass
+        expression.integrate()
 
 
