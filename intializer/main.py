@@ -26,4 +26,6 @@ Single Integral
 Other implementations:
 1. Being able to integrate between two numbers,
 2. Being able to integrate multiple variables. 
+3. being able to input strings, latex code and pdf of terms
+4. differentiation
 '''
